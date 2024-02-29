@@ -34,6 +34,8 @@ function draw() {
   Engine.update(engine);
   
   // Write title on screen
+  fill(255);
+  noStroke();
   textSize(24);
   textFont('Courier New');
   text(title, 30, 50);
