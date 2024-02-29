@@ -1,3 +1,6 @@
+// Title Image for Computational Prototyping
+// Desplaying on Canvas with <frame>
+
 // module aliases
 let Engine = Matter.Engine,
   Render = Matter.Render,
