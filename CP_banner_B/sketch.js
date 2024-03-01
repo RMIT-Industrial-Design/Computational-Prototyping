@@ -38,7 +38,6 @@ function draw() {
   noStroke();
   textSize(24);
   textFont('Courier New');
-  textStyle(BOLD);
   text(title, 30, 50);
   
   // randomly add new boxes
