@@ -14,6 +14,7 @@ let title = "";
 
 // create boxes and a ground
 let boxes = [];
+let charBoxes = [];
 let ground;
 
 function setup() {
@@ -23,6 +24,17 @@ function setup() {
   world = engine.world;
 
   ground = new Boundary(width/4, 200, width, 20);
+
+  // create a title
+  let title = 'Course Overview';
+  let x = 10;
+  for (let ch of title) {
+    if (ch !== ' '){
+      charBoxes.push(new CharBox(x, 150, 40, 40, ch));
+    }
+    x += 50;
+  }
+
 }
 
 function mouseDragged(){
@@ -50,6 +62,9 @@ function draw() {
   }
 
   for(let box of boxes){
+    box.show();
+  }
+  for(let box of charBoxes){
     box.show();
   }
 
