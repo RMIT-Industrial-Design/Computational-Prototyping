@@ -27,7 +27,7 @@ function setup() {
 
   // create a title
   let title = 'Course Overview';
-  let x = 10;
+  let x = 30;
   for (let ch of title) {
     if (ch !== ' '){
       charBoxes.push(new CharBox(x, 150, 40, 40, ch));
