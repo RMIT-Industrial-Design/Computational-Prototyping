@@ -15,7 +15,7 @@ class CharBox extends Box {
     rotate(ang);
     // draw box
     noStroke();
-    fill(200, 200, 0);
+    fill(230, 230, 0);
     rectMode(CENTER);
     rect(0, 0, this.w, this.h);
     // draw text

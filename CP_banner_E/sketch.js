@@ -28,25 +28,25 @@ function setup() {
   boundary3 = new Boundary(width+10, height/2, 20, height);
 
   // create line 1 of the a title
-  let title = 'Computational Prototyping';
+  let title = ' Computational Prototyping ';
   let x = 30;
   for (let ch of title) {
-    charBoxes.push(new CharBox(x, 30, 30, 45, ch, 24));
-    x += 30;
+    charBoxes.push(new CharBox(x, 40, 20, 45, ch, 24));
+    x += 20;
   }
   // create line 2 of the a title
-  title = 'for Design';
+  title = ' for Design ';
   x = 30;
   for (let ch of title) {
-    charBoxes.push(new CharBox(x, 90, 30, 45, ch, 24));
-    x += 30;
+    charBoxes.push(new CharBox(x, 90, 20, 45, ch, 24));
+    x += 20;
   }
   // create line 3 of the a title
-  title = 'ARCH1477';
+  title = ' ARCH1477 ';
   x = 30;
   for (let ch of title) {
-    charBoxes.push(new CharBox(x, 150, 20, 35, ch, 18));
-    x += 20;
+    charBoxes.push(new CharBox(x, 150, 16, 35, ch, 18));
+    x += 16;
   }
 
   // make some balls
