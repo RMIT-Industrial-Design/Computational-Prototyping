@@ -22,7 +22,7 @@ class CharBox extends Box {
     textFont('Courier New', this.s);
     fill(0);
     stroke(0);
-    strokeWeight(this.s/10);
+    strokeWeight(this.s/12);
     textAlign(CENTER, CENTER);
     text(this.ch, 0, 0);
     pop();
