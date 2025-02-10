@@ -11,9 +11,8 @@ class Boundary {
   }
 
   show() {
-    stroke(200);
-    strokeWeight(0.5);
-    noFill();
+    noStroke();
+    fill(200,0,0);
     beginShape();
     for (let a of this.body.vertices) {
       vertex(a.x, a.y);

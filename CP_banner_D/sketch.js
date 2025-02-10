@@ -15,7 +15,7 @@ let title = "";
 // create boxes and a ground
 let boxes = [];
 let charBoxes = [];
-let ground;
+let ground1, ground2, ground3;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -23,16 +23,39 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
 
-  ground = new Boundary(width/4, 200, width, 20);
+  ground1 = new Boundary(0, 60, 650, 5);
+  ground2 = new Boundary(0, 120, 1650, 5);
+  ground3 = new Boundary(0, 180, 680, 5);
 
-  // create a title
-  let title = 'Course Overview';
+  // create line 1 of the a title
+  let title = 'Welcome to';
   let x = 30;
   for (let ch of title) {
     if (ch !== ' '){
-      charBoxes.push(new CharBox(x, 150, 40, 40, ch));
+      charBoxes.push(new CharBox(x, 0, 30, 45, ch));
+      x += 10;
     }
-    x += 50;
+    x += 21;
+  }
+  // create line 2 of the a title
+  title = 'Computational Prototyping';
+  x = 30;
+  for (let ch of title) {
+    if (ch !== ' '){
+      charBoxes.push(new CharBox(x, 110, 30, 45, ch));
+      x += 10;
+    }
+    x += 22;
+  }
+  // create line 3 of the a title
+  title = 'for Design';
+  x = 30;
+  for (let ch of title) {
+    if (ch !== ' '){
+      charBoxes.push(new CharBox(x, 150, 30, 45, ch));
+      x += 10;
+    }
+    x += 22;
   }
 
 }
@@ -68,7 +91,9 @@ function draw() {
     box.show();
   }
 
-  ground.show();
+  ground1.show();
+  ground2.show();
+  ground3.show();
 }
 
 function windowResized() {
