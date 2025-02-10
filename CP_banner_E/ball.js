@@ -9,24 +9,20 @@ class Ball {
     Composite.add(engine.world, [this.body]);
   }
 
+  isOffScreen() {
+    if (this.body.position.y > height || this.body.position.y < 0) return true;
+    else return false;
+  }
+
+  remove() {
+    Composite.remove(engine.world, this.body);
+  }
+
   show() {
     let pos = this.body.position;
     let r = this.body.circleRadius;
     noStroke();
     fill(0, 0, 150);
     ellipse(pos.x, pos.y, r * 2);
-  }
-}
-
-class cursorBall extends Ball {
-  constructor(x, y, r) {
-    super(x, y, r);
-  }
-
-  show() {
-    let r = this.body.circleRadius;
-    noStroke();
-    noFill();
-    ellipse(mouseX, mouseY, r * 2);
   }
 }

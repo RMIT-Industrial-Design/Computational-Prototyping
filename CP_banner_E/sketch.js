@@ -67,19 +67,30 @@ function draw() {
   textFont('Courier New');
   text(title, 30, 50);
 
-  for(let ball of balls){
-    // create force from direction of mouse
-    let bForce = createVector(ball.body.position.x, ball.body.position.y);
-    // let bForce = createVector(mouseX, mouseY)
-    bForce.sub(mouseX, mouseY);
-    // make force very weak
-    bForce.setMag(0.0005);
-    // apply force to body
-    Body.applyForce(ball.body, ball.body.position, bForce);
+  if (balls.length > 0){
+    for(let i = 0; i < balls.length; i++) {
+      // create force from direction of mouse
+      let bForce = createVector(balls[i].body.position.x, balls[i].body.position.y);
+      // let bForce = createVector(mouseX, mouseY)
+      bForce.sub(mouseX, mouseY);
+      // make force very weak
+      bForce.setMag(0.0005);
+      // apply force to body
+      Body.applyForce(balls[i].body, balls[i].body.position, bForce);
+      // draw the balls to screen
+      balls[i].show();
 
-    // draw the balls to screen
-    ball.show();
+      // delete balls that have escaped  off screen
+      if (balls[i].isOffScreen()){
+        balls[i].remove();
+        balls.splice(i, 1);
+      }
+    }
+  } else {
+    let cB = random(charBoxes);
+    cB.free();
   }
+
   for(let box of charBoxes){
     box.show();
   }
