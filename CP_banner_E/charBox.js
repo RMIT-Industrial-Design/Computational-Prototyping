@@ -9,20 +9,8 @@ class CharBox extends Box {
 
   free() {
     if (this.body.isStatic) {
-      let x = this.body.position.x;
-      let y = this.body.position.y;
-
-      // delete the existing body from the world
-      Composite.remove(engine.world, this.body);
-      // make a new body
-      let options = {
-        friction: 0.5,
-        restitution: 0.5,
-        isStatic: false,
-      };
-      this.body = Bodies.rectangle(x, y, this.w, this.h, options);
-      // add the new body to the world
-      Composite.add(engine.world, [this.body]);
+      Body.setMass(this.body, 0.1);
+      Body.setStatic(this.body, false);
     }
   }
 
