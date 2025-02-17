@@ -24,7 +24,7 @@ function setup() {
   world = engine.world;
 
   boundary1 = new Boundary(-10, height/2, 20, height);
-  boundary2 = new Boundary(width/2, height+10, width, 20);
+  boundary2 = new Boundary(width/2, height+10, width * 2, 20);
   boundary3 = new Boundary(width+10, height/2, 20, height);
 
   // create line 1 of the a title
@@ -98,4 +98,7 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  boundary1.position(-10, height/2);
+  boundary2.position(width/2, height+10);
+  boundary3.position(width+10, height/2);
 }

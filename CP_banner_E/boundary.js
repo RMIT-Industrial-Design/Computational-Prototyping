@@ -10,6 +10,10 @@ class Boundary {
     Composite.add(engine.world, [this.body]);
   }
 
+  position(x, y){
+    Matter.Body.set(this.body, "position", {x: x, y: y});
+  }
+
   show() {
     noStroke();
     noFill();
